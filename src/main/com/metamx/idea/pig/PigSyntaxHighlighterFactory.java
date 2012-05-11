@@ -80,7 +80,7 @@ public class PigSyntaxHighlighterFactory extends SyntaxHighlighterFactory
         }
 
         if (PigTokenType.BOOLEAN_OP_SET.contains(tokenType)) {
-          tak[i++] = SyntaxHighlighterColors.OPERATION_SIGN;
+          tak[i++] = SyntaxHighlighterColors.KEYWORD;
         }
 
         if (PigTokenType.BRACES_SET.contains(tokenType)) {

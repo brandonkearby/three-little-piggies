@@ -5,6 +5,7 @@ import com.intellij.lang.Language;
 import com.intellij.psi.TokenType;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.TokenSet;
+import com.sun.tools.corba.se.idl.constExpr.Not;
 
 /**
  *
@@ -17,6 +18,8 @@ public interface PigTokenType extends TokenType
   IElementType STORE_KEYWORD = new IElementType("STORE_KEYWORD", Language.findLanguageByID("PigLanguage"));
   IElementType ORDER_KEYWORD = new IElementType("ORDER_KEYWORD", Language.findLanguageByID("PigLanguage"));
   IElementType IF_KEYWORD = new IElementType("IF_KEYWORD", Language.findLanguageByID("PigLanguage"));
+  IElementType IN_KEYWORD = new IElementType("IN_KEYWORD", Language.findLanguageByID("PigLanguage"));
+  IElementType SET_KEYWORD = new IElementType("SET_KEYWORD", Language.findLanguageByID("PigLanguage"));
   IElementType INT_KEYWORD = new IElementType("INT_KEYWORD", Language.findLanguageByID("PigLanguage"));
   IElementType OUTER_KEYWORD = new IElementType("OUTER_KEYWORD", Language.findLanguageByID("PigLanguage"));
   IElementType IMPORT_KEYWORD = new IElementType("IMPORT_KEYWORD", Language.findLanguageByID("PigLanguage"));
@@ -43,6 +46,7 @@ public interface PigTokenType extends TokenType
   IElementType LOAD_KEYWORD = new IElementType("LOAD_KEYWORD", Language.findLanguageByID("PigLanguage"));
   IElementType ONSCHEMA_KEYWORD = new IElementType("ONSCHEMA_KEYWORD", Language.findLanguageByID("PigLanguage"));
   IElementType BAG_KEYWORD = new IElementType("BAG_KEYWORD", Language.findLanguageByID("PigLanguage"));
+  IElementType BY_KEYWORD = new IElementType("BY_KEYWORD", Language.findLanguageByID("PigLanguage"));
   IElementType RETURNS_KEYWORD = new IElementType("RETURNS_KEYWORD", Language.findLanguageByID("PigLanguage"));
   IElementType LEFT_KEYWORD = new IElementType("LEFT_KEYWORD", Language.findLanguageByID("PigLanguage"));
   IElementType FILTER_KEYWORD = new IElementType("FILTER_KEYWORD", Language.findLanguageByID("PigLanguage"));
@@ -78,9 +82,9 @@ public interface PigTokenType extends TokenType
   IElementType RPARENTH = new IElementType("RPARENTH", Language.findLanguageByID("PigLanguage"));
   IElementType LPARENTH = new IElementType("LPARENTH", Language.findLanguageByID("PigLanguage"));
 
-  IElementType NOT = new IElementType("NOT", Language.findLanguageByID("PigLanguage"));
-  IElementType AND = new IElementType("AND", Language.findLanguageByID("PigLanguage"));
-  IElementType OR = new IElementType("OR", Language.findLanguageByID("PigLanguage"));
+  IElementType NOT_KEYWORD = new IElementType("NOT_KEYWORD", Language.findLanguageByID("PigLanguage"));
+  IElementType AND_KEYWORD = new IElementType("AND_KEYWORD", Language.findLanguageByID("PigLanguage"));
+  IElementType OR_KEYWORD = new IElementType("OR_KEYWORD", Language.findLanguageByID("PigLanguage"));
 
   IElementType EQEQ = new IElementType("EQEQ", Language.findLanguageByID("PigLanguage"));
   IElementType NOTEQ = new IElementType("NOTEQ", Language.findLanguageByID("PigLanguage"));
@@ -154,9 +158,9 @@ public interface PigTokenType extends TokenType
       STR_OP_NE
   );
   TokenSet COMPARISION_OP_SET = TokenSet.create(EQEQ, NOTEQ, LT, GT, GTEQ, LTEQ);
-  TokenSet BOOLEAN_OP_SET = TokenSet.create(AND, OR, NOT);
-  TokenSet KEYWORD_SET = TokenSet.create(
-      SPLIT_KEYWORD, FULL_KEYWORD, STREAM_KEYWORD, STORE_KEYWORD, ORDER_KEYWORD, IF_KEYWORD
+  TokenSet BOOLEAN_OP_SET = TokenSet.create(AND_KEYWORD, OR_KEYWORD, NOT_KEYWORD);
+  TokenSet KEYWORD_SET = TokenSet.create(BY_KEYWORD, SET_KEYWORD,
+      SPLIT_KEYWORD, FULL_KEYWORD, STREAM_KEYWORD, STORE_KEYWORD, ORDER_KEYWORD, IF_KEYWORD, IN_KEYWORD
       , INT_KEYWORD, OUTER_KEYWORD, IMPORT_KEYWORD, STDOUT_KEYWORD, TUPLE_KEYWORD, ASC_KEYWORD
       , FOREACH_KEYWORD, MAPREDUCE_KEYWORD, CACHE_KEYWORD, NULL_KEYWORD, FALSE_KEYWORD, FLOAT_KEYWORD
       , USING_KEYWORD, LONG_KEYWORD, SHIP_KEYWORD, GROUP_KEYWORD, PARALLEL_KEYWORD

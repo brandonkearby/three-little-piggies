@@ -4,7 +4,7 @@ import com.intellij.lexer.FlexLexer;
 import com.intellij.psi.tree.IElementType;
 
 %%
-
+%caseless
 %unicode
 %class PigLexer
 %implements FlexLexer
@@ -80,6 +80,7 @@ ESCAPE_SEQUENCE=\\[^\r\n]
 <YYINITIAL> "AS" { return PigTokenType.AS_KEYWORD; }
 <YYINITIAL> "ASC" { return PigTokenType.ASC_KEYWORD; }
 <YYINITIAL> "BAG" { return PigTokenType.BAG_KEYWORD; }
+<YYINITIAL> "BY" { return PigTokenType.BY_KEYWORD; }
 <YYINITIAL> "CACHE" { return PigTokenType.CACHE_KEYWORD; }
 <YYINITIAL> "CHARARRAY" { return PigTokenType.CHARARRAY_KEYWORD; }
 <YYINITIAL> "COGROUP" { return PigTokenType.COGROUP_KEYWORD; }
@@ -97,6 +98,7 @@ ESCAPE_SEQUENCE=\\[^\r\n]
 <YYINITIAL> "GROUP" { return PigTokenType.GROUP_KEYWORD; }
 <YYINITIAL> "IF" { return PigTokenType.IF_KEYWORD; }
 <YYINITIAL> "IMPORT" { return PigTokenType.IMPORT_KEYWORD; }
+<YYINITIAL> "IN" { return PigTokenType.IN_KEYWORD; }
 <YYINITIAL> "INNER" { return PigTokenType.INNER_KEYWORD; }
 <YYINITIAL> "INPUT" { return PigTokenType.INPUT_KEYWORD; }
 <YYINITIAL> "INT" { return PigTokenType.INT_KEYWORD; }
@@ -118,6 +120,7 @@ ESCAPE_SEQUENCE=\\[^\r\n]
 <YYINITIAL> "RETURNS" { return PigTokenType.RETURNS_KEYWORD; }
 <YYINITIAL> "RIGHT" { return PigTokenType.RIGHT_KEYWORD; }
 <YYINITIAL> "SAMPLE" { return PigTokenType.SAMPLE_KEYWORD; }
+<YYINITIAL> "SET" { return PigTokenType.SET_KEYWORD; }
 <YYINITIAL> "SHIP" { return PigTokenType.SHIP_KEYWORD; }
 <YYINITIAL> "SPLIT" { return PigTokenType.SPLIT_KEYWORD; }
 <YYINITIAL> "STDERR" { return PigTokenType.STDERROR_KEYWORD; }
@@ -130,9 +133,9 @@ ESCAPE_SEQUENCE=\\[^\r\n]
 <YYINITIAL> "UNION" { return PigTokenType.UNION_KEYWORD; }
 <YYINITIAL> "USING" { return PigTokenType.USING_KEYWORD; }
 <YYINITIAL> "VOID" { return PigTokenType.VOID_KEYWORD; }
-<YYINITIAL> "AND" { return PigTokenType.AND; }
-<YYINITIAL> "NOT" { return PigTokenType.NOT; }
-<YYINITIAL> "OR" { return PigTokenType.OR; }
+<YYINITIAL> "AND" { return PigTokenType.AND_KEYWORD; }
+<YYINITIAL> "NOT" { return PigTokenType.NOT_KEYWORD; }
+<YYINITIAL> "OR" { return PigTokenType.OR_KEYWORD; }
 <YYINITIAL> "EQ" { return PigTokenType.STR_OP_EQ; }
 <YYINITIAL> "GT" { return PigTokenType.STR_OP_GT; }
 <YYINITIAL> "LT" { return PigTokenType.STR_OP_LT; }

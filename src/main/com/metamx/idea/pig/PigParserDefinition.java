@@ -12,6 +12,8 @@ import com.intellij.psi.tree.IFileElementType;
 import com.intellij.psi.tree.TokenSet;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.IOException;
+
 /**
  *
  */
@@ -20,7 +22,12 @@ public class PigParserDefinition implements ParserDefinition
   @NotNull
   public Lexer createLexer(Project project)
   {
-    return null;
+      try {
+          return new PigLexer(project.getProjectFile().getInputStream());
+      }
+      catch (IOException e) {
+          throw new RuntimeException(e.getMessage(), e);
+      }
   }
 
   public PsiParser createParser(Project project)
